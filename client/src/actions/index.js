@@ -3,7 +3,7 @@
 // import axios from "axios";
 import ApiClient from '../api/ApiClient'; // ApiClient is exported as an instance, the name could be different, but they are pointing to the same thing.
 import history from '../history';
-import { getCurrentUser } from '../utils/AuthUtils';
+import { getCurrentUser, updateAuthToken } from '../utils/AuthUtils';
 
 // the action to delete one of the to-do list(s)
 export const deleteTodoList = (dispatch, deletedTodoList) => {
@@ -223,6 +223,7 @@ export const loginUser = (dispatch, loginInput) => {
       dispatch({
         type: 'LOG_IN_SUCCESS' // set isLoggedIn = true in the reducers
       });
+      updateAuthToken(token);
       // Todo: redirect to homepage
       history.push('/');
     })

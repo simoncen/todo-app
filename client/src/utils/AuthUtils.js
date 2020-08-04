@@ -1,4 +1,5 @@
 import jwt_decode from 'jwt-decode';
+import ApiClient from '../api/ApiClient';
 
 export function isLoggedIn() {
   const token = localStorage.getItem("jwtToken");
@@ -19,5 +20,13 @@ export function getCurrentUser() {
     }
   } else {
     return undefined;
+  }
+}
+
+export function updateAuthToken(token) {
+  if (token) {
+    ApiClient.defaults.headers.common['Authorization'] = token;
+  } else {
+    delete ApiClient.defaults.headers.common['Authorization'];
   }
 }
