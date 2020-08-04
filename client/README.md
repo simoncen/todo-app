@@ -1,11 +1,27 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Todo List Web App Project Description
+
+Todo-app is a mini to-do list full stack website application similar to the Trello web app.
+This Todo-app website allows users to log in their own account to manage their to-do list:
+
+1.  Add a new to-do list.
+2.  Delete a to-do list.
+3. Add, delete, and toggle an item under a to-do list.
+
+* Users can sign up a new account if they do not have one.
+* Users can log out from their account.
+
 ## Available Scripts
 
 In the project directory, you can run:
 
 ### `npm start`
 
+Needs to direct to the client folder before `npm start`
+```
+cd client
+```
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
@@ -16,6 +32,10 @@ You will also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `nodemon server`
+Opens up the backend server of the application.
+Enter this command line under the root folder ---> todo-app.
 
 ### `npm run build`
 

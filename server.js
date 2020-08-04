@@ -8,6 +8,7 @@ const PORT = 4000;
 const listRoutes = require("./routes/listRoutes");
 const itemRoutes = require("./routes/itemRoutes");
 const userRoutes = require("./routes/userRoutes");
+const path = require('path');
 // passport config
 const passport = require("passport");
 // Passport config
