@@ -18,6 +18,8 @@ import Signup from "./components/auth/Signup";
 import Login from "./components/auth/Login";
 import PrivateRoute from './components/private-route/PrivateRoute'; // no '{}' means importing the default part of the file
 import UserAvatar from './components/UserAvatar'; // '' is preferred over ""
+// for google analytics
+import ReactGA from 'react-ga';
 
 const styles = {
   title: {
@@ -29,6 +31,11 @@ const styles = {
   content: {
     backgroundColor: "#0079bf"
   }
+}
+
+function initializeReactGA() { // are there any other ways to write this???
+    ReactGA.initialize('UA-174542858-1');
+    ReactGA.pageview('/homepage');
 }
 
 

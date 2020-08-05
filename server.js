@@ -36,13 +36,6 @@ mongoose
   .then(() => console.log("MongoDB successfully connected"))
   .catch(err => console.log(err));
 
-  if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('client/build'));
-    app.get('*', (req, res) => {
-      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-    })
-  }
-
 // Routes
 // we do not consider anything related to session, only consider with specified 'jwt' strategy for authentication
 // both list and item need to be authenticated
@@ -50,7 +43,15 @@ app.use('/list', passport.authenticate('jwt', { session: false }), listRoutes); 
 app.use('/item', passport.authenticate('jwt', { session: false }), itemRoutes); // session refers to a visitor's time browsing a web site, the time between a visitor's first arrival at a page on the site and the time they stop using the site. Bad user experience if the use try to come back to the website after he left.
 app.use('/user', userRoutes);
 
+if (process.env.NODE_ENV === 'production') { // heroku is "production", env --> environment(development as individual server)
+  app.use(express.static(path.join(__dirname, 'client', 'build')));
+  app.get('/*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+ }
+
+
 // listen to the PORT of 4000
-app.listen(process.env.PORT || PORT, function() {
+app.listen(process.env.PORT || PORT, function() { // heroku might provide a PORT
   console.log("Server is running on Port: " + PORT);
 });
