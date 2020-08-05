@@ -23,7 +23,7 @@ export function getCurrentUser() {
   }
 }
 
-export function updateAuthToken(token) {
+export function updateAuthToken(token) { // token need to be saved to localstorage right after login 
   if (token) {
     ApiClient.defaults.headers.common['Authorization'] = token;
   } else {
