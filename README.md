@@ -3,15 +3,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Todo List Web App Project Description
 
 Todo-app is a mini to-do list full stack website application similar to the Trello web app.
-This Todo-app website allows users to log in their own accounts to manage their to-do list:
+* Users can log in their own accounts to manage their to-do lists:
 
-1.  Add a new to-do list.
-2.  Delete a to-do list.
-3. Add, delete, and toggle an item under a to-do list.
+  1.  Add a new to-do list.
+  2.  Delete a to-do list.
+  3.  Add, delete, and toggle an item under a to-do list.
 
 * Users can sign up a new account if they do not have one.
 * Users can log out from their accounts.
-* Website URL: https://arcane-forest-91021.herokuapp.com/ 
+* Website URL: https://arcane-forest-91021.herokuapp.com/
 
 ## Available Scripts
 
