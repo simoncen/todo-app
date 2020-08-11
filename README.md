@@ -11,7 +11,7 @@ Todo-app is a mini to-do list full stack website application similar to the Trel
 
 * Users can sign up a new account if they do not have one.
 * Users can log out from their accounts.
-* Website URL: https://arcane-forest-91021.herokuapp.com/
+* Website URL: www.listnotes.me
 
 ## Available Scripts
 
